@@ -4,13 +4,11 @@ const app = express();
 const cors = require("cors");
 const axios = require("axios");
 require("dotenv").config();
-const mongoose = require("mongoose");
 const PORT = process.env.PORT;
 app.use(cors());
 const {handelBike}=require('./controller/bike.controller');
 const{bikeModel}=require('./model/bike.model');
-const MONGO_URL = process.env.MONGO_URL;
-mongoose.connect(`${MONGO_URL}`, { useNewUrlParser: true, useUnifiedTopology: true });
+const {handelWeather}=require('./controller/weather.controller');
 
 
 
@@ -21,6 +19,7 @@ mongoose.connect(`${MONGO_URL}`, { useNewUrlParser: true, useUnifiedTopology: tr
 
 
 app.get('/bike', handelBike);
+app.get('/weather',handelWeather);
 
 
 
