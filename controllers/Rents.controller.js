@@ -27,13 +27,14 @@ let iconsMale = [
   }
 
 const createBikeController = async (req, res) => {
-  let { username, location, gender,image } = req.body;
+  let { username, location, gender,image,Phone } = req.body;
   if(gender==="Male"){
   let newBike = new rentModel({
     username: username,
     location: location,
     gender: gender,
-    image: (iconsMale)[Rand(0,3)] 
+    image: (iconsMale)[Rand(0,3)] ,
+    Phone:Phone
   });
   newBike.save();
   } else if(gender==="Female"){
@@ -41,7 +42,8 @@ const createBikeController = async (req, res) => {
         username: username,
         location: location,
         gender: gender,
-        image: (iconsFemale)[Rand(0,3)] 
+        image: (iconsFemale)[Rand(0,3)] ,
+        Phone:Phone
       });
       newBike.save();
   }
