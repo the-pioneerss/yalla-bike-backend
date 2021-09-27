@@ -1,6 +1,6 @@
 'use strict'
 
-const finaly=require('../modles/GNEWS.model');
+const finaly=require('../models/GNEWS.model');
 const axios=require('axios');
 const Cache = require('../helper/cacth');
 let cache = new Cache();
