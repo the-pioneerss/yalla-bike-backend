@@ -1,4 +1,4 @@
-"use strict";
+/*"use strict";
 const {bikeModel}=require('../model/bike.model');
 const axios = require("axios");
 
@@ -22,4 +22,4 @@ let handelBike = async (req, res) => {
 
 module.exports={
     handelBike
-}
+}*/
