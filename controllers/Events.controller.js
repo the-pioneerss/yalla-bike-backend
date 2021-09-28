@@ -9,7 +9,7 @@ eventModel.find({}).then((data) => {
 };
 
 const createEventController = async (req, res) => {
-  let { eventName, location, time,generalInfo,description,eventsDate } = req.body;
+  let { eventName, location, time,generalInfo,description,eventsDate,userName } = req.body;
   
   let newEvent = new eventModel({
     eventName: eventName,
@@ -17,7 +17,8 @@ const createEventController = async (req, res) => {
     time: time,
     generalInfo: generalInfo,
     description:description,
-    eventsDate:eventsDate
+    eventsDate:eventsDate,
+    userName:userName
 
   });
   newEvent.save();
